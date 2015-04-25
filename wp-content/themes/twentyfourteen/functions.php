@@ -517,3 +517,12 @@ require get_template_directory() . '/inc/customizer.php';
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
 }
+//hiding the admin bar from frontend
+function hide_admin_bar_from_front_end(){
+  if (is_blog_admin()) {
+    return true;
+  }
+  return false;
+}
+add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
+
