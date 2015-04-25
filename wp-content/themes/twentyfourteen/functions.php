@@ -526,3 +526,21 @@ function hide_admin_bar_from_front_end(){
 }
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 
+//adding user roles candidate, comman man, party president
+
+// creating user roles
+add_role('candidate', 'Candidate', array(
+    'read' => true, // True allows that capability
+    'edit_posts' => true,
+    'delete_posts' => false, // Use false to explicitly deny
+));
+add_role('common_man', 'Common Man', array(
+    'read' => true, // True allows that capability
+    'edit_posts' => true,
+    'delete_posts' => false, // Use false to explicitly deny
+));
+add_role('party_president', 'Party President', array(
+    'read' => true, // True allows that capability
+    'edit_posts' => true,
+    'delete_posts' => false, // Use false to explicitly deny
+));
