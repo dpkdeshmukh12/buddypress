@@ -217,7 +217,6 @@ function bp_follow_add_follow_button( $args = '' ) {
 
 		$leader_role = $leader_info->roles;
 		if($leader_role[0]=="candidate"){
-			echo "<br />";
 			$follow_btn = bp_get_button( apply_filters( 'bp_follow_get_add_follow_button', $button, $r['leader_id'], $r['follower_id'] ) );
 		}else{
 			$follow_btn = "";

@@ -352,8 +352,8 @@ function bp_add_friend_button( $potential_friend_id = 0, $friend_status = false 
 					'wrapper_class'     => 'friendship-button pending_friend',
 					'wrapper_id'        => 'friendship-button-' . $potential_friend_id,
 					'link_href'         => wp_nonce_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/requests/cancel/' . $potential_friend_id . '/', 'friends_withdraw_friendship' ),
-					'link_text'         => __( 'Cancel Friendship Request', 'buddypress' ),
-					'link_title'        => __( 'Cancel Friendship Requested', 'buddypress' ),
+					'link_text'         => __( 'Cancel Karyakarta Request', 'buddypress' ),
+					'link_title'        => __( 'Cancel Karyakarta Request', 'buddypress' ),
 					'link_id'			=> 'friend-' . $potential_friend_id,
 					'link_rel'			=> 'remove',
 					'link_class'        => 'friendship-button pending_friend requested'
@@ -369,8 +369,8 @@ function bp_add_friend_button( $potential_friend_id = 0, $friend_status = false 
 					'wrapper_class'     => 'friendship-button awaiting_response_friend',
 					'wrapper_id'        => 'friendship-button-' . $potential_friend_id,
 					'link_href'         => bp_loggedin_user_domain() . bp_get_friends_slug() . '/requests/',
-					'link_text'         => __( 'Friendship Requested', 'buddypress' ),
-					'link_title'        => __( 'Friendship Requested', 'buddypress' ),
+					'link_text'         => __( 'Become Karyakarta Requested', 'buddypress' ),
+					'link_title'        => __( 'Become Karyakarta Requested', 'buddypress' ),
 					'link_id'           => 'friend-' . $potential_friend_id,
 					'link_rel'          => 'remove',
 					'link_class'        => 'friendship-button awaiting_response_friend requested'
@@ -386,8 +386,8 @@ function bp_add_friend_button( $potential_friend_id = 0, $friend_status = false 
 					'wrapper_class'     => 'friendship-button is_friend',
 					'wrapper_id'        => 'friendship-button-' . $potential_friend_id,
 					'link_href'         => wp_nonce_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/remove-friend/' . $potential_friend_id . '/', 'friends_remove_friend' ),
-					'link_text'         => __( 'Cancel Friendship', 'buddypress' ),
-					'link_title'        => __( 'Cancel Friendship', 'buddypress' ),
+					'link_text'         => __( 'Cancel Karyakarta', 'buddypress' ),
+					'link_title'        => __( 'Cancel Karyakarta', 'buddypress' ),
 					'link_id'           => 'friend-' . $potential_friend_id,
 					'link_rel'          => 'remove',
 					'link_class'        => 'friendship-button is_friend remove'
@@ -403,8 +403,8 @@ function bp_add_friend_button( $potential_friend_id = 0, $friend_status = false 
 					'wrapper_class'     => 'friendship-button not_friends',
 					'wrapper_id'        => 'friendship-button-' . $potential_friend_id,
 					'link_href'         => wp_nonce_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/add-friend/' . $potential_friend_id . '/', 'friends_add_friend' ),
-					'link_text'         => __( 'Add Friend', 'buddypress' ),
-					'link_title'        => __( 'Add Friend', 'buddypress' ),
+					'link_text'         => __( 'Become Karyakarta', 'buddypress' ),
+					'link_title'        => __( 'Become Karyakarta', 'buddypress' ),
 					'link_id'           => 'friend-' . $potential_friend_id,
 					'link_rel'          => 'add',
 					'link_class'        => 'friendship-button not_friends add'
@@ -419,7 +419,22 @@ function bp_add_friend_button( $potential_friend_id = 0, $friend_status = false 
 		 *
 		 * @param string $button HTML markup for add friend button.
 		 */
-		return bp_get_button( apply_filters( 'bp_get_add_friend_button', $button ) );
+		//return bp_get_button( apply_filters( 'bp_get_add_friend_button', $button ) );
+		// get current user info
+		$current_user_data_mit = get_userdata(bp_loggedin_user_id());
+		$current_user_role_mit = $current_user_data_mit->roles;
+		// get the candidate info
+		$leader_info = get_userdata($potential_friend_id);
+		$leader_role = $leader_info->roles;
+		// check if the requesting user is common_man and requested user is candidate
+		if($leader_role[0]=="candidate" && $current_user_role_mit[0]=="common_man"){
+			$become_karyakarta_btn = bp_get_button( apply_filters( 'bp_get_add_friend_button', $button ) );
+		}else{
+			$become_karyakarta_btn = "";
+		}
+		
+		// Filter and return the HTML button
+		return $become_karyakarta_btn;
 	}
 
 /**
