@@ -852,15 +852,23 @@ function bp_profile_group_tabs() {
 		$group_name = bp_profile_group_name(false);
 
 	$tabs = array();
-	for ( $i = 0, $count = count( $groups ); $i < $count; ++$i ) {
-		if ( $group_name == $groups[$i]->name )
-			$selected = ' class="current"';
-		else
-			$selected = '';
 
-		if ( !empty( $groups[$i]->fields ) ) {
-			$link = trailingslashit( bp_displayed_user_domain() . $bp->profile->slug . '/edit/group/' . $groups[$i]->id );
-			$tabs[] = sprintf( '<li %1$s><a href="%2$s">%3$s</a></li>', $selected, $link, esc_html( $groups[$i]->name ) );
+	// get user id from url and request data with function get_userdata()
+	$user_data = get_userdata($bp->displayed_user->id);
+
+	for ( $i = 0, $count = count( $groups ); $i < $count; ++$i ) {
+
+		// restircting the user fields tab in frontend displaying the respective frontend user field for user role
+		if(($user_data->roles[0] == "candidate" && $groups[$i]->id == 2) || ( ($user_data->roles[0] == "candidate" || $user_data->roles[0] == "common_man" || $user_data->roles[0] == "party_president") &&  $groups[$i]->id == 1) || ($user_data->roles[0] == "party_president" &&  $groups[$i]->id == 3)) {
+			if ( $group_name == $groups[$i]->name )
+				$selected = ' class="current"';
+			else
+				$selected = '';
+
+			if ( !empty( $groups[$i]->fields ) ) {
+				$link = trailingslashit( bp_displayed_user_domain() . $bp->profile->slug . '/edit/group/' . $groups[$i]->id );
+				$tabs[] = sprintf( '<li %1$s><a href="%2$s">%3$s</a></li>', $selected, $link, esc_html( $groups[$i]->name ) );
+			}
 		}
 	}
 
