@@ -213,6 +213,16 @@ function bp_follow_add_follow_button( $args = '' ) {
 			'wrapper'           => ! empty( $r['wrapper'] ) ? esc_attr( $r['wrapper'] ) : false
 		);
 
+		$leader_info = get_userdata($r['leader_id']);
+
+		$leader_role = $leader_info->roles;
+		if($leader_role[0]=="candidate"){
+			echo "<br />";
+			$follow_btn = bp_get_button( apply_filters( 'bp_follow_get_add_follow_button', $button, $r['leader_id'], $r['follower_id'] ) );
+		}else{
+			$follow_btn = "";
+		}
+		
 		// Filter and return the HTML button
-		return bp_get_button( apply_filters( 'bp_follow_get_add_follow_button', $button, $r['leader_id'], $r['follower_id'] ) );
+		return $follow_btn;
 	}
