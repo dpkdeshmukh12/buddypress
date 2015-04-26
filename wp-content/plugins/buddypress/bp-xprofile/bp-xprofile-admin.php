@@ -639,12 +639,13 @@ class BP_XProfile_User_Admin {
 
 		if ( ! bp_is_user_spammer( $user_id ) && bp_has_profile( $profile_args ) ) {
 
+			// get user id from url and request data with function get_userdata()
+			$user_data = get_userdata($_GET['user_id']);
+				
 			// Loop through field groups and add a metabox for each one
 			while ( bp_profile_groups() ) : bp_the_profile_group();
-				// get user id from url and request data with function get_userdata()
-				$user_data = get_userdata($_GET['user_id']);
 				// check and restrict the user related informatino edit backend
-				if(($user_data->roles[0] == "candidate" && bp_get_the_profile_group_id() == 2) || ( $user_data->roles[0] == "common_man" &&  bp_get_the_profile_group_id() == 1) || ($user_data->roles[0] == "party_president" &&  bp_get_the_profile_group_id() == 3)) {
+				if(($user_data->roles[0] == "candidate" && bp_get_the_profile_group_id() == 2) || ( ( $user_data->roles[0] == "candidate" || $user_data->roles[0] == "common_man" || $user_data->roles[0] == "party_president") &&  bp_get_the_profile_group_id() == 1) || ($user_data->roles[0] == "party_president" &&  bp_get_the_profile_group_id() == 3)) {
 					add_meta_box(
 						'bp_xprofile_user_admin_fields_' . sanitize_key( bp_get_the_profile_group_slug() ),
 						esc_html( bp_get_the_profile_group_name() ),
