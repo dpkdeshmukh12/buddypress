@@ -4319,3 +4319,12 @@ a.post-thumbnail:hover {
 		line-height: 36px;
 	}
 }
+
+.col-lg-4 {
+	float: left;
+	width:33%;
+}
+.col-lg-2 {
+	float: left;
+	width:33%;
+}
