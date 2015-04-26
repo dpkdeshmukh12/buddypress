@@ -544,3 +544,10 @@ add_role('party_president', 'Party President', array(
     'edit_posts' => true,
     'delete_posts' => false, // Use false to explicitly deny
 ));
+
+// Removing the default roles from wordpress
+remove_role("subscriber");
+remove_role("editor");
+remove_role("author");
+remove_role("contributor");
+remove_role("sub_admin");
