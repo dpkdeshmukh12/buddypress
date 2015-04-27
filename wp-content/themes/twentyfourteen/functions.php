@@ -551,3 +551,18 @@ remove_role("editor");
 remove_role("author");
 remove_role("contributor");
 remove_role("sub_admin");
+
+// buddypress profile menu names setup
+function mit_profile_menu_tabs() {
+	global $bp;
+	$bp->bp_nav['friends']['name'] = 'Karyakarta';
+	$bp->bp_nav['groups']['name'] = 'Events';
+	$bp->bp_options_nav['activity']['friends']['name'] = 'Karyakartas';
+	$bp->bp_options_nav['activity']['groups']['name'] = 'Events';
+	// removing the email sub option below settings menu
+	unset($bp->bp_options_nav['settings']['notifications']);
+	// removing the profile visibility below settings menu
+	unset($bp->bp_options_nav['settings']['profile']);
+
+}
+add_action('bp_setup_nav','mit_profile_menu_tabs',201);
