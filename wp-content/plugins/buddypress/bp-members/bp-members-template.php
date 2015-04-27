@@ -1367,7 +1367,17 @@ function bp_get_displayed_user_nav() {
 		 * @param array  $user_nav_item Array holding parts used to construct tab list item.
 		 *                              Passed by reference.
 		 */
-		echo apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item['css_id'], array( '<li id="' . $user_nav_item['css_id'] . '-personal-li" ' . $selected . '><a id="user-' . $user_nav_item['css_id'] . '" href="' . $link . '">' . $user_nav_item['name'] . '</a></li>', &$user_nav_item ) );
+		$current_user_data_mit = get_userdata(bp_loggedin_user_id());
+		$current_user_role_mit = $current_user_data_mit->roles;
+		if($user_nav_item['css_id'] != "friends"){
+			echo apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item['css_id'], array( '<li id="' . $user_nav_item['css_id'] . '-personal-li" ' . $selected . '><a id="user-' . $user_nav_item['css_id'] . '" href="' . $link . '">' . $user_nav_item['name'] . '</a></li>', &$user_nav_item ) );
+		} else {
+			if( $current_user_role_mit[0]=="candidate" ){
+				echo apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item['css_id'], array( '<li id="' . $user_nav_item['css_id'] . '-personal-li" ' . $selected . '><a id="user-' . $user_nav_item['css_id'] . '" href="' . $link . '">' . $user_nav_item['name'] . '</a></li>', &$user_nav_item ) );
+			} else {
+				echo apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item['css_id'], array( '', &$user_nav_item ) );
+			}
+		}
 	}
 }
 
