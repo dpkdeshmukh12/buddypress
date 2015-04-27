@@ -566,3 +566,8 @@ function mit_profile_menu_tabs() {
 
 }
 add_action('bp_setup_nav','mit_profile_menu_tabs',201);
+// redirecting the frontend user from dashboard to frontend
+function acme_login_redirect( $redirect_to, $request, $user  ) {
+	return ( is_array( $user->roles ) && in_array( 'administrator', $user->roles ) ) ? admin_url() : site_url();
+}
+add_filter( 'login_redirect', 'acme_login_redirect', 10, 3 );
