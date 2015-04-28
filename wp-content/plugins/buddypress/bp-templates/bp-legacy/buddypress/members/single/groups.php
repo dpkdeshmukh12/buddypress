@@ -15,7 +15,7 @@
 
 		<?php if ( !bp_is_current_action( 'invites' ) ) : ?>
 
-			<li id="groups-order-select" class="last filter">
+			<?php /* ?><li id="groups-order-select" class="last filter">
 
 				<label for="groups-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
 				<select id="groups-order-by">
@@ -27,7 +27,7 @@
 					<?php do_action( 'bp_member_group_order_options' ); ?>
 
 				</select>
-			</li>
+			</li><?php */ ?>
 
 		<?php endif; ?>
 

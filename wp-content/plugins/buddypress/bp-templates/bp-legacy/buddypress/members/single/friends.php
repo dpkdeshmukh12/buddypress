@@ -15,7 +15,7 @@
 
 		<?php if ( !bp_is_current_action( 'requests' ) ) : ?>
 
-			<li id="members-order-select" class="last filter">
+			<?php /* ?><li id="members-order-select" class="last filter">
 
 				<label for="members-friends"><?php _e( 'Order By:', 'buddypress' ); ?></label>
 				<select id="members-friends">
@@ -26,7 +26,7 @@
 					<?php do_action( 'bp_member_friends_order_options' ); ?>
 
 				</select>
-			</li>
+			</li><?php */ ?>
 
 		<?php endif; ?>
 

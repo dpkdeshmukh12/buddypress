@@ -3500,7 +3500,7 @@ function bp_groups_members_template_part() {
  */
 function bp_groups_members_filter() {
 	?>
-	<li id="group_members-order-select" class="last filter">
+	<?php /* ?><li id="group_members-order-select" class="last filter">
 		<label for="group_members-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
 		<select id="group_members-order-by">
 			<option value="last_joined"><?php _e( 'Newest', 'buddypress' ); ?></option>
@@ -3515,7 +3515,7 @@ function bp_groups_members_filter() {
 			<?php do_action( 'bp_groups_members_order_options' ); ?>
 
 		</select>
-	</li>
+	</li><?php */ ?>
 	<?php
 }
 

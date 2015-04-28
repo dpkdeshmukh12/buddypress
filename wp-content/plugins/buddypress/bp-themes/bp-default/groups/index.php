@@ -50,7 +50,7 @@ get_header( 'buddypress' ); ?>
 
 					<?php do_action( 'bp_groups_directory_group_types' ); ?>
 
-					<li id="groups-order-select" class="last filter">
+					<?php /* ?><li id="groups-order-select" class="last filter">
 
 						<label for="groups-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
 						<select id="groups-order-by">
@@ -62,7 +62,7 @@ get_header( 'buddypress' ); ?>
 							<?php do_action( 'bp_groups_directory_order_options' ); ?>
 
 						</select>
-					</li>
+					</li><?php */ ?>
 				</ul>
 			</div>
 

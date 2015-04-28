@@ -92,7 +92,7 @@ get_header( 'buddypress' ); ?>
 
 					<?php do_action( 'bp_activity_syndication_options' ); ?>
 
-					<li id="activity-filter-select" class="last">
+					<?php /* ?><li id="activity-filter-select" class="last">
 						<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
 						<select id="activity-filter-by">
 							<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
@@ -130,7 +130,7 @@ get_header( 'buddypress' ); ?>
 							<?php do_action( 'bp_activity_filter_options' ); ?>
 
 						</select>
-					</li>
+					</li><?php */ ?>
 				</ul>
 			</div><!-- .item-list-tabs -->
 

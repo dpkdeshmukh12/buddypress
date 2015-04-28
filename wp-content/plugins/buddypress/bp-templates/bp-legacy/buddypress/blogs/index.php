@@ -31,7 +31,7 @@
 
 				<?php do_action( 'bp_blogs_directory_blog_sub_types' ); ?>
 
-				<li id="blogs-order-select" class="last filter">
+				<?php /* ?><li id="blogs-order-select" class="last filter">
 
 					<label for="blogs-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
 					<select id="blogs-order-by">
@@ -42,7 +42,7 @@
 						<?php do_action( 'bp_blogs_directory_order_options' ); ?>
 
 					</select>
-				</li>
+				</li><?php */ ?>
 			</ul>
 		</div>
 

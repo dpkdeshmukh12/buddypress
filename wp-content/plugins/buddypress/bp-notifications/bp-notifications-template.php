@@ -1225,7 +1225,7 @@ function bp_notifications_pagination_links() {
 function bp_notifications_sort_order_form() {
 
 	// Setup local variables
-	$orders   = array( 'DESC', 'ASC' );
+	/*$orders   = array( 'DESC', 'ASC' );
 	$selected = 'DESC';
 
 	// Check for a custom sort_order
@@ -1248,7 +1248,7 @@ function bp_notifications_sort_order_form() {
 		</noscript>
 	</form>
 
-<?php
+<?php*/
 }
 
 /**

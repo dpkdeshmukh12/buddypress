@@ -188,7 +188,7 @@ function bp_follow_add_ajax_to_members_loop() {
 function bp_follow_add_members_dropdown_filter() {
 ?>
 
-	<?php do_action( 'bp_members_directory_member_sub_types' ); ?>
+	<?php /* ?><?php do_action( 'bp_members_directory_member_sub_types' ); ?>
 
 	<li id="members-order-select" class="last filter">
 
@@ -205,7 +205,7 @@ function bp_follow_add_members_dropdown_filter() {
 			<?php do_action( 'bp_members_directory_order_options' ); ?>
 
 		</select>
-	</li>
+	</li><?php */ ?>
 
 <?php
 }
