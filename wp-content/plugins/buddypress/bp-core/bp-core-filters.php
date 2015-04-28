@@ -614,7 +614,7 @@ function bp_modify_page_title( $title = '', $sep = '&raquo;', $seplocation = 'ri
 
 	// Group creation page
 	} elseif ( bp_is_group_create() ) {
-		$title_parts = array( __( 'Create a Group', 'buddypress' ) );
+		$title_parts = array( __( 'Create a Event', 'buddypress' ) );
 
 	// Blog creation page
 	} elseif ( bp_is_create_blog() ) {

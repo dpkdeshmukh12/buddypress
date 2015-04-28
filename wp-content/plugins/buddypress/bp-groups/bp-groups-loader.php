@@ -163,9 +163,9 @@ class BP_Groups_Component extends BP_Component {
 			'slug'                  => BP_GROUPS_SLUG,
 			'root_slug'             => isset( $bp->pages->groups->slug ) ? $bp->pages->groups->slug : BP_GROUPS_SLUG,
 			'has_directory'         => true,
-			'directory_title'       => _x( 'Groups', 'component directory title', 'buddypress' ),
+			'directory_title'       => _x( 'Events', 'component directory title', 'buddypress' ),
 			'notification_callback' => 'groups_format_notifications',
-			'search_string'         => _x( 'Search Groups...', 'Component directory search', 'buddypress' ),
+			'search_string'         => _x( 'Search Events...', 'Component directory search', 'buddypress' ),
 			'global_tables'         => $global_tables,
 			'meta_tables'           => $meta_tables,
 		);
@@ -623,12 +623,12 @@ class BP_Groups_Component extends BP_Component {
 				'href'   => trailingslashit( $groups_link . 'invites' )
 			);
 
-			// Create a Group
+			// Create a Event
 			if ( bp_user_can_create_groups() ) {
 				$wp_admin_nav[] = array(
 					'parent' => 'my-account-' . $this->id,
 					'id'     => 'my-account-' . $this->id . '-create',
-					'title'  => _x( 'Create a Group', 'My Account Groups sub nav', 'buddypress' ),
+					'title'  => _x( 'Create a Event', 'My Account Groups sub nav', 'buddypress' ),
 					'href'   => trailingslashit( bp_get_groups_directory_permalink() . 'create' )
 				);
 			}

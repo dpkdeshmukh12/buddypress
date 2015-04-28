@@ -2841,7 +2841,7 @@ function bp_group_join_button( $group = false ) {
 	}
 
 /**
- * Output the Create a Group button.
+ * Output the Create a Event button.
  *
  * @since BuddyPress (2.0.0)
  */
@@ -2849,7 +2849,7 @@ function bp_group_create_button() {
 	echo bp_get_group_create_button();
 }
 	/**
-	 * Get the Create a Group button.
+	 * Get the Create a Event button.
 	 *
 	 * @since BuddyPress (2.0.0)
 	 *
@@ -2867,8 +2867,8 @@ function bp_group_create_button() {
 		$button_args = array(
 			'id'         => 'create_group',
 			'component'  => 'groups',
-			'link_text'  => __( 'Create a Group', 'buddypress' ),
-			'link_title' => __( 'Create a Group', 'buddypress' ),
+			'link_text'  => __( 'Create a Event', 'buddypress' ),
+			'link_title' => __( 'Create a Event', 'buddypress' ),
 			'link_class' => 'group-create no-ajax',
 			'link_href'  => trailingslashit( bp_get_root_domain() ) . trailingslashit( bp_get_groups_root_slug() ) . trailingslashit( 'create' ),
 			'wrapper'    => false,
@@ -2879,7 +2879,7 @@ function bp_group_create_button() {
 	}
 
 /**
- * Output the Create a Group nav item.
+ * Output the Create a Event nav item.
  *
  * @since BuddyPress (2.2.0)
  */
@@ -2888,7 +2888,7 @@ function bp_group_create_nav_item() {
 }
 
 	/**
-	 * Get the Create a Group nav item.
+	 * Get the Create a Event nav item.
 	 *
 	 * @since BuddyPress (2.2.0)
 	 *

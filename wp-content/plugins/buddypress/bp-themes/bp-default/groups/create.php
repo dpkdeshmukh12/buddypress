@@ -15,7 +15,7 @@ get_header( 'buddypress' ); ?>
 		<?php do_action( 'bp_before_create_group_content_template' ); ?>
 
 		<form action="<?php bp_group_creation_form_action(); ?>" method="post" id="create-group-form" class="standard-form" enctype="multipart/form-data">
-			<h3><?php _e( 'Create a Group', 'buddypress' ); ?> &nbsp;<a class="button" href="<?php echo trailingslashit( bp_get_root_domain() . '/' . bp_get_groups_root_slug() ); ?>"><?php _e( 'Groups Directory', 'buddypress' ); ?></a></h3>
+			<h3><?php _e( 'Create a Event', 'buddypress' ); ?> &nbsp;<a class="button" href="<?php echo trailingslashit( bp_get_root_domain() . '/' . bp_get_groups_root_slug() ); ?>"><?php _e( 'Groups Directory', 'buddypress' ); ?></a></h3>
 
 			<?php do_action( 'bp_before_create_group' ); ?>
 
