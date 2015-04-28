@@ -26,12 +26,12 @@
 				<?php do_action( 'bp_before_group_details_creation_step' ); ?>
 
 				<div>
-					<label for="group-name"><?php _e( 'Group Name (required)', 'buddypress' ); ?></label>
+					<label for="group-name"><?php _e( 'Event Name (required)', 'buddypress' ); ?></label>
 					<input type="text" name="group-name" id="group-name" aria-required="true" value="<?php bp_new_group_name(); ?>" />
 				</div>
 
 				<div>
-					<label for="group-desc"><?php _e( 'Group Description (required)', 'buddypress' ); ?></label>
+					<label for="group-desc"><?php _e( 'Event Description (required)', 'buddypress' ); ?></label>
 					<textarea name="group-desc" id="group-desc" aria-required="true"><?php bp_new_group_description(); ?></textarea>
 				</div>
 
@@ -51,61 +51,61 @@
 				<h4><?php _e( 'Privacy Options', 'buddypress' ); ?></h4>
 
 				<div class="radio">
-					<label><input type="radio" name="group-status" value="public"<?php if ( 'public' == bp_get_new_group_status() || !bp_get_new_group_status() ) { ?> checked="checked"<?php } ?> /> <strong><?php _e( 'This is a public group', 'buddypress' ); ?></strong></label>
+					<label><input type="radio" name="group-status" value="public"<?php if ( 'public' == bp_get_new_group_status() || !bp_get_new_group_status() ) { ?> checked="checked"<?php } ?> /> <strong><?php _e( 'This is a public event', 'buddypress' ); ?></strong></label>
 					<ul>
-						<li><?php _e( 'Any site member can join this group.', 'buddypress' ); ?></li>
-						<li><?php _e( 'This group will be listed in the groups directory and in search results.', 'buddypress' ); ?></li>
-						<li><?php _e( 'Group content and activity will be visible to any site member.', 'buddypress' ); ?></li>
+						<li><?php _e( 'Any site member can join this Event.', 'buddypress' ); ?></li>
+						<li><?php _e( 'This event will be listed in the events directory and in search results.', 'buddypress' ); ?></li>
+						<li><?php _e( 'Event content and activity will be visible to any site member.', 'buddypress' ); ?></li>
 					</ul>
 
 
-					<label>
+					<?php /* ?><label>
 						<input type="radio" name="group-status" value="private"<?php if ( 'private' == bp_get_new_group_status() ) { ?> checked="checked"<?php } ?> /> 
-						<strong><?php _e( 'This is a private group', 'buddypress' ); ?></strong>
+						<strong><?php _e( 'This is a private event', 'buddypress' ); ?></strong>
 					</label>
 					<ul>
-						<li><?php _e( 'Only users who request membership and are accepted can join the group.', 'buddypress' ); ?></li>
-						<li><?php _e( 'This group will be listed in the groups directory and in search results.', 'buddypress' ); ?></li>
-						<li><?php _e( 'Group content and activity will only be visible to members of the group.', 'buddypress' ); ?></li>
-					</ul>
+						<li><?php _e( 'Only users who request membership and are accepted can join the event.', 'buddypress' ); ?></li>
+						<li><?php _e( 'This event will be listed in the events directory and in search results.', 'buddypress' ); ?></li>
+						<li><?php _e( 'Event content and activity will only be visible to members of the event.', 'buddypress' ); ?></li>
+					</ul><?php */ ?>
 
 
 					<label>
 						<input type="radio" name="group-status" value="hidden"<?php if ( 'hidden' == bp_get_new_group_status() ) { ?> checked="checked"<?php } ?> /> 
-						<strong><?php _e('This is a hidden group', 'buddypress' ); ?></strong>
+						<strong><?php _e('This is a hidden event', 'buddypress' ); ?></strong>
 					</label>
 					<ul>
-						<li><?php _e( 'Only users who are invited can join the group.', 'buddypress' ); ?></li>
-						<li><?php _e( 'This group will not be listed in the groups directory or search results.', 'buddypress' ); ?></li>
-						<li><?php _e( 'Group content and activity will only be visible to members of the group.', 'buddypress' ); ?></li>
+						<li><?php _e( 'Only users who are invited can join the event.', 'buddypress' ); ?></li>
+						<li><?php _e( 'This event will not be listed in the events directory or search results.', 'buddypress' ); ?></li>
+						<li><?php _e( 'Event content and activity will only be visible to members of the group.', 'buddypress' ); ?></li>
 					</ul>
 
 				</div>
 
-				<h4><?php _e( 'Group Invitations', 'buddypress' ); ?></h4>
+				<h4><?php _e( 'Event Invitations', 'buddypress' ); ?></h4>
 
-				<p><?php _e( 'Which members of this group are allowed to invite others?', 'buddypress' ); ?></p>
+				<p><?php _e( 'Which members of this event are allowed to invite others?', 'buddypress' ); ?></p>
 
 				<div class="radio">
 					<label>
 						<input type="radio" name="group-invite-status" value="members"<?php bp_group_show_invite_status_setting( 'members' ); ?> />
-						<strong><?php _e( 'All group members', 'buddypress' ); ?></strong>
+						<strong><?php _e( 'All event karyakarta', 'buddypress' ); ?></strong>
 					</label>
 
-					<label>
+					<?php /* ?><label>
 						<input type="radio" name="group-invite-status" value="mods"<?php bp_group_show_invite_status_setting( 'mods' ); ?> />
-						<strong><?php _e( 'Group admins and mods only', 'buddypress' ); ?></strong>
-					</label>
+						<strong><?php _e( 'Event admins and mods only', 'buddypress' ); ?></strong>
+					</label><?php */ ?>
 
 					<label>
 						<input type="radio" name="group-invite-status" value="admins"<?php bp_group_show_invite_status_setting( 'admins' ); ?> />
-						<strong><?php _e( 'Group admins only', 'buddypress' ); ?></strong>
+						<strong><?php _e( 'Event admins only', 'buddypress' ); ?></strong>
 					</label>
 				</div>
 
 				<?php if ( bp_is_active( 'forums' ) ) : ?>
 
-					<h4><?php _e( 'Group Forums', 'buddypress' ); ?></h4>
+					<h4><?php _e( 'Event Forums', 'buddypress' ); ?></h4>
 
 					<?php if ( bp_forums_is_installed_correctly() ) : ?>
 
@@ -116,7 +116,7 @@
 						</div>
 					<?php elseif ( is_super_admin() ) : ?>
 
-						<p><?php printf( __( '<strong>Attention Site Admin:</strong> Group forums require the <a href="%s">correct setup and configuration</a> of a bbPress installation.', 'buddypress' ), bp_core_do_network_admin() ? network_admin_url( 'settings.php?page=bb-forums-setup' ) :  admin_url( 'admin.php?page=bb-forums-setup' ) ); ?></p>
+						<p><?php printf( __( '<strong>Attention Site Admin:</strong> Event forums require the <a href="%s">correct setup and configuration</a> of a bbPress installation.', 'buddypress' ), bp_core_do_network_admin() ? network_admin_url( 'settings.php?page=bb-forums-setup' ) :  admin_url( 'admin.php?page=bb-forums-setup' ) ); ?></p>
 
 					<?php endif; ?>
 
@@ -142,7 +142,7 @@
 					</div><!-- .left-menu -->
 
 					<div class="main-column">
-						<p><?php _e( "Upload an image to use as a profile photo for this group. The image will be shown on the main group page, and in search results.", 'buddypress' ); ?></p>
+						<p><?php _e( "Upload an image to use as a profile photo for this event. The image will be shown on the main event page, and in search results.", 'buddypress' ); ?></p>
 
 						<p>
 							<input type="file" name="file" id="file" />
@@ -150,14 +150,14 @@
 							<input type="hidden" name="action" id="action" value="bp_avatar_upload" />
 						</p>
 
-						<p><?php _e( 'To skip the group profile photo upload process, hit the "Next Step" button.', 'buddypress' ); ?></p>
+						<p><?php _e( 'To skip the event profile photo upload process, hit the "Next Step" button.', 'buddypress' ); ?></p>
 					</div><!-- .main-column -->
 
 				<?php endif; ?>
 
 				<?php if ( 'crop-image' == bp_get_avatar_admin_step() ) : ?>
 
-					<h4><?php _e( 'Crop Group Profile Photo', 'buddypress' ); ?></h4>
+					<h4><?php _e( 'Crop Event Profile Photo', 'buddypress' ); ?></h4>
 
 					<img src="<?php bp_avatar_to_crop(); ?>" id="avatar-to-crop" class="avatar" alt="<?php esc_attr_e( 'Profile photo to crop', 'buddypress' ); ?>" />
 
@@ -204,7 +204,7 @@
 					<div class="main-column">
 
 						<div id="message" class="info">
-							<p><?php _e('Select people to invite from your friends list.', 'buddypress' ); ?></p>
+							<p><?php _e('Select people to invite from your karyakarta list.', 'buddypress' ); ?></p>
 						</div>
 
 						<?php /* The ID 'friend-list' is important for AJAX support. */ ?>
@@ -239,7 +239,7 @@
 				<?php else : ?>
 
 					<div id="message" class="info">
-						<p><?php _e( 'Once you have built up friend connections you will be able to invite others to your group.', 'buddypress' ); ?></p>
+						<p><?php _e( 'Once you have built up karyakarta connections you will be able to invite others to your event.', 'buddypress' ); ?></p>
 					</div>
 
 				<?php endif; ?>
@@ -275,7 +275,7 @@
 					<?php /* Create Button */ ?>
 					<?php if ( bp_is_first_group_creation_step() ) : ?>
 
-						<input type="submit" value="<?php esc_attr_e( 'Create Group and Continue', 'buddypress' ); ?>" id="group-creation-create" name="save" />
+						<input type="submit" value="<?php esc_attr_e( 'Create Event and Continue', 'buddypress' ); ?>" id="group-creation-create" name="save" />
 
 					<?php endif; ?>
 

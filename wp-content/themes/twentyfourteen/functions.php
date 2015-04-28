@@ -557,6 +557,7 @@ function mit_profile_menu_tabs() {
 	global $bp;
 	$bp->bp_nav['friends']['name'] = 'Karyakarta';
 	$bp->bp_nav['groups']['name'] = 'Events';
+	$bp->bp_nav['create']['name'] = 'Create a Event';
 	$bp->bp_options_nav['activity']['friends']['name'] = 'Karyakartas';
 	$bp->bp_options_nav['activity']['groups']['name'] = 'Events';
 	// removing the email sub option below settings menu

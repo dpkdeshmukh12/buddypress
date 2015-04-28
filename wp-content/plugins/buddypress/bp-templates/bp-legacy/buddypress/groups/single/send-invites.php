@@ -21,8 +21,8 @@ if ( bp_get_new_group_invite_friend_list() ) : ?>
 elseif ( 0 == bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
 
 	<div id="message" class="info">
-		<p class="notice"><?php _e( 'Group invitations can only be extended to friends.', 'buddypress' ); ?></p>
-		<p class="message-body"><?php _e( "Once you've made some friendships, you'll be able to invite those members to this group.", 'buddypress' ); ?></p>
+		<p class="notice"><?php _e( 'Event invitations can only be extended to karyakarta.', 'buddypress' ); ?></p>
+		<p class="message-body"><?php _e( "Once you've add some karyakarta, you'll be able to invite those members to this event.", 'buddypress' ); ?></p>
 	</div>
 
 <?php
@@ -30,7 +30,7 @@ elseif ( 0 == bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
 else : ?>
 
 	<div id="message" class="info">
-		<p class="notice"><?php _e( 'All of your friends already belong to this group.', 'buddypress' ); ?></p>
+		<p class="notice"><?php _e( 'All of your karyakarta already belong to this event.', 'buddypress' ); ?></p>
 	</div>
 
 <?php endif; ?>
