@@ -1,5 +1,5 @@
 <div class="item-list-tabs no-ajax" id="subnav" role="navigation">
-	<ul>
+	<?php /* ?><ul>
 		<li class="feed"><a href="<?php bp_group_activity_feed_link(); ?>" title="<?php esc_attr_e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
 
 		<?php do_action( 'bp_group_activity_syndication_options' ); ?>
@@ -14,7 +14,7 @@
 				<?php do_action( 'bp_group_activity_filter_options' ); ?>
 			</select>
 		</li>
-	</ul>
+	</ul><?php */ ?>
 </div><!-- .item-list-tabs -->
 
 <?php do_action( 'bp_before_group_activity_post_form' ); ?>

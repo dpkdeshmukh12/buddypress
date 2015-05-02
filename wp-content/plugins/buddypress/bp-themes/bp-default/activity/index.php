@@ -87,12 +87,12 @@ get_header( 'buddypress' ); ?>
 			</div><!-- .item-list-tabs -->
 
 			<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
-				<ul>
+				<?php /* ?><ul>
 					<li class="feed"><a href="<?php bp_sitewide_activity_feed_link(); ?>" title="<?php esc_attr_e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
 
 					<?php do_action( 'bp_activity_syndication_options' ); ?>
 
-					<?php /* ?><li id="activity-filter-select" class="last">
+					<li id="activity-filter-select" class="last">
 						<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
 						<select id="activity-filter-by">
 							<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
@@ -130,8 +130,8 @@ get_header( 'buddypress' ); ?>
 							<?php do_action( 'bp_activity_filter_options' ); ?>
 
 						</select>
-					</li><?php */ ?>
-				</ul>
+					</li>
+				</ul><?php */ ?>
 			</div><!-- .item-list-tabs -->
 
 			<?php do_action( 'bp_before_directory_activity_list' ); ?>
