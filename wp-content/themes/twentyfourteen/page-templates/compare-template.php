@@ -145,11 +145,15 @@ get_header(); ?>
 							  <td><?php echo bp_profile_field_data( 'field=Education&user_id='.$user_compare1_id ); ?></td>
 							  <td><?php echo bp_profile_field_data( 'field=Education&user_id='.$user_compare2_id ); ?></td>
 							</tr>
-							<tr>
+							<?php /* ?><tr>
 							  <th scope="row">Age</th>
-							  <td><?php echo bp_profile_field_data( 'field=Age&user_id='.$user_compare1_id ); ?></td>
+							  <td><?php 
+							  	$from = new DateTime(bp_profile_field_data( 'field=Date of Birth&user_id='.$user_compare1_id ));
+							  	var_dump($from);
+							 // echo date("d-m-Y", strtotime(bp_profile_field_data( 'field=Date of Birth&user_id='.$user_compare1_id )));
+							  			//echo date_diff(date_create(bp_profile_field_data( 'field=Date of Birth&user_id='.$user_compare1_id )), date_create('today'))->y; ?></td>
 							  <td><?php echo bp_profile_field_data( 'field=Age&user_id='.$user_compare2_id ); ?></td>
-							</tr>
+							</tr><?php */ ?>
 							<tr>
 							  <th scope="row">Date of Birth</th>
 							  <td><?php echo bp_profile_field_data( 'field=Date of Birth&user_id='.$user_compare1_id ); ?></td>
