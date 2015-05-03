@@ -21,7 +21,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 			<article id="post-0" class="bp_activity type-bp_activity post-0 status-publish hentry">	
-			<header class="entry-header">
+			<header class="entry-content">
 				<form  action="<?php $_SERVER["PHP_SELF"];?>" method="post">
 				<div class="col-lg-4">
 				<?php 
@@ -101,8 +101,14 @@ get_header(); ?>
 							array_push($user_data_into_array,$value->data);
 						}
 						
-						$user_compare1_id = $user_data_into_array[0]->ID;
-						$user_compare2_id = $user_data_into_array[1]->ID;
+						if($fields1 == $user_data_into_array[0]->ID){
+							$user_compare1_id = $user_data_into_array[0]->ID;
+							$user_compare2_id = $user_data_into_array[1]->ID;
+						} else {
+							$user_compare1_id = $user_data_into_array[1]->ID;
+							$user_compare2_id = $user_data_into_array[0]->ID;	
+						}
+						
 						?>
 						<table class="table table-hover table-bordered">
 						  <thead>
