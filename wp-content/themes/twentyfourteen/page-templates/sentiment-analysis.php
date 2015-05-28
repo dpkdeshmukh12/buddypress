@@ -112,7 +112,15 @@ $sentiment = new \PHPInsight\Sentiment();
 							if($comment_nlp_report_final){
 							$max_nlp_value = max($comment_nlp_report_final);
 							$max_nlp_value_key = array_search($max_nlp_value, $comment_nlp_report_final);
-							echo '<img src="'.get_bloginfo( 'template_url' ).'/images/'.$max_nlp_value_key.'-png.png" width="30" height="30" title="'.$max_nlp_value_key.'" />';
+							//echo '<img src="'.get_bloginfo( 'template_url' ).'/images/'.$max_nlp_value_key.'-png.png" width="30" height="30" title="'.$max_nlp_value_key.'" />';
+							//echo $max_nlp_value_key;
+								if($max_nlp_value_key == "pos") {
+									echo "<b>Positive</b>";
+								} elseif($max_nlp_value_key == "neg") {
+									echo "<b>Negative</b>";
+								} elseif($max_nlp_value_key == "neu") {
+									echo "<b>Neutral</b>";
+								}
 							}
 
 						?>
@@ -142,7 +150,14 @@ $sentiment = new \PHPInsight\Sentiment();
 
 										<?php
 											$class = $sentiment->categorise($comment->content);
-											echo '<img src="'.get_bloginfo( 'template_url' ).'/images/'.$class.'-png.png" width="30" height="30" title="'.$class.'" />';
+											//echo '<img src="'.get_bloginfo( 'template_url' ).'/images/'.$class.'-png.png" width="30" height="30" title="'.$class.'" />';
+											if($class == "pos") {
+												echo "<b>Positive</b>";
+											} elseif($class == "neg") {
+												echo "<b>Negative</b>";
+											} elseif($class == "neu") {
+												echo "<b>Neutral</b>";
+											}
 										?>
 											<?php /* ?><a href="#acomment-23" class="acomment-reply bp-primary-action" id="acomment-reply-22-from-23">Reply</a>
 
